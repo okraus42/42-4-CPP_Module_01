@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 10:52:35 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/05 18:02:36 by okraus           ###   ########.fr       */
+/*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
+/*   Updated: 2024/05/05 18:38:14 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
 #include <iostream>
-#include "Zombie.hpp"
 
-int main(void)
+HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon)
 {
-	std::string name1 = "Zombie";
-	std::string name2 = "HordeZombie";
-	int			n = 7;
-	Zombie zombie(name1);
-	zombie.announce();
-	Zombie *ptrZombie = zombieHorde(n, name2);
-	for (int i = 0; i < n; ++i)
-		ptrZombie[i].announce();
-	delete [] ptrZombie;
-	return (0);
+	this->name = name;
 }
+
+void HumanA::attack(void)
+{
+	std::cout << this->name << " attacks with their "
+		<< this->weapon.getType() << std::endl;
+}
+
+void HumanA::setWeapon(Weapon &weapon)
+{
+	this->weapon = weapon;
+}
+	

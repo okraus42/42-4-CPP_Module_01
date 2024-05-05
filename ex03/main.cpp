@@ -6,23 +6,33 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 10:52:35 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/05 18:02:36 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/05 18:27:39 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Zombie.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int main(void)
+int main(int ac, char *argv[])
 {
-	std::string name1 = "Zombie";
-	std::string name2 = "HordeZombie";
-	int			n = 7;
-	Zombie zombie(name1);
-	zombie.announce();
-	Zombie *ptrZombie = zombieHorde(n, name2);
-	for (int i = 0; i < n; ++i)
-		ptrZombie[i].announce();
-	delete [] ptrZombie;
+	Weapon club = Weapon("crude spiked club");
+	if (ac == 1)
+	{
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	else if (argv[1])
+	{
+		HumanB jim("Jim");
+		jim.attack();
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return (0);
 }

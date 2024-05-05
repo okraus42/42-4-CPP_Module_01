@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 10:52:35 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/05 18:02:36 by okraus           ###   ########.fr       */
+/*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
+/*   Updated: 2024/05/05 18:32:00 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#pragma once
+#ifndef HUMAN_A_HPP
+# define HUMAN_A_HPP
 
-int main(void)
+# include <iostream>
+# include "Weapon.hpp"
+
+class HumanA
 {
-	std::string name1 = "Zombie";
-	std::string name2 = "HordeZombie";
-	int			n = 7;
-	Zombie zombie(name1);
-	zombie.announce();
-	Zombie *ptrZombie = zombieHorde(n, name2);
-	for (int i = 0; i < n; ++i)
-		ptrZombie[i].announce();
-	delete [] ptrZombie;
-	return (0);
-}
+	private:
+		std::string	name;
+		Weapon		&weapon;
+
+	public:
+		HumanA(std::string name, Weapon &weapon);
+		void attack(void);
+		void setWeapon(Weapon &weapon);
+};
+
+#endif

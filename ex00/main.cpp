@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 10:52:35 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/05 15:41:58 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/05 18:02:43 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int main(void)
 	ptrZombie->announce();
 	delete ptrZombie;
 	randomChump(name3);
+	return (0);
 }
