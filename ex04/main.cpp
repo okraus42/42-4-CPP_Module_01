@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 10:52:35 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/06 15:18:39 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/06 15:31:40 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 	std::string	content;
 	if (argc != 4)
 	{
-		std::cerr << "Error: incorrect number of atguments" << std::endl;
+		std::cerr << "Error: incorrect number of arguments" << std::endl;
 		return (1);
 	}
 	std::string	remove(argv[2]);
