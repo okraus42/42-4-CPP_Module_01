@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 10:52:35 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/06 13:41:38 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/06 15:18:39 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,14 @@ int main(int argc, char *argv[])
 	std::string	content;
 	if (argc != 4)
 	{
+		std::cerr << "Error: incorrect number of atguments" << std::endl;
 		return (1);
 	}
 	std::string	remove(argv[2]);
 	std::string	add(argv[3]);
 	if (!ft_readfile(argv[1], content))
 	{
+		std::cerr << "Error: could not open file" << std::endl;
 		return (1);
 	}
 	//std::cout << content << std::endl;
@@ -93,6 +95,7 @@ int main(int argc, char *argv[])
 	//std::cout << content << std::endl;
 	if (!ft_writefile(argv[1], content))
 	{
+		std::cerr << "Error: could not create file" << std::endl;
 		return (1);
 	}
 	return 0;

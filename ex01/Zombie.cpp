@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/05 17:09:40 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/06 15:11:29 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Zombie::Zombie()
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->name << " has decayed." << std::endl;
+	std::cout << this->name << " was obliterated." << std::endl;
 }
 
 void	Zombie::announce(void)

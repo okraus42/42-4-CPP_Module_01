@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 10:52:35 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/06 13:41:25 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/06 15:19:36 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
+		std::cerr << "Error: incorrect number of atguments" << std::endl;
 		return (1);
 	}
 	Harl	harl;
